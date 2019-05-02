@@ -1,4 +1,56 @@
-option('systemduserunitdir', type: 'string', value: '', description: 'custom directory for systemd user units')
+# Copyright © 2018, 2019 Iñigo Martínez
+#
+# This programme is free software; you can redistribute it and/or modify it
+# under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 3 of the License, or (at your
+# option) any later version.
+#
+# This programme is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+# See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this programme.  If not, see <https://www.gnu.org/licenses/>.
 
-option('search_provider', type: 'boolean', value: true, description: 'Enable gnome-shell search provider')
-option('nautilus_extension', type: 'boolean', value: false, description: 'Enable nautilus extension')
+option(
+  'debugg', # for some reason, 'debug' is "reserved"
+  type: 'boolean',
+  value: false,
+  description: 'Enable extra debugging functionality',
+)
+
+option(
+  'docs',
+  type: 'boolean',
+  value: true,
+  description: 'Enable documentation',
+)
+
+option(
+  'gtk3',
+  type: 'boolean',
+  value: true,
+  description: 'Enable GTK+ 3.0 widget',
+)
+
+option(
+  'gtk4',
+  type: 'boolean',
+  value: false,
+  description: 'Enable GTK+ 4.0 widget',
+)
+
+option(
+  'nautilus_extension',
+  type: 'boolean',
+  value: false,
+  description: 'Enable nautilus extension',
+)
+
+option(
+  'search_provider',
+  type: 'boolean',
+  value: false,
+  description: 'Enable gnome-shell search provider',
+)

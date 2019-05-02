@@ -1,4 +1,5 @@
-# Copyright © 2018, 2019 Iñigo Martínez
+#!/usr/bin/env python3
+# Copyright © 2019 Christian Persch
 #
 # This programme is free software; you can redistribute it and/or modify it
 # under the terms of the GNU General Public License as published by
@@ -13,9 +14,15 @@
 # You should have received a copy of the GNU General Public License
 # along with this programme.  If not, see <https://www.gnu.org/licenses/>.
 
-i18n = import('i18n')
+import os
+import subprocess
+import sys
 
-i18n.gettext(
-  gt_gettext_domain,
-  preset: 'glib',
-)
+if os.environ.get('DESTDIR'):
+    sys.exit(0)
+
+prefix = os.environ['MESON_INSTALL_PREFIX']
+schemasdir = os.path.join(prefix, sys.argv[1])
+
+rv = subprocess.call(['glib-compile-schemas', schemasdir])
+sys.exit(rv)
